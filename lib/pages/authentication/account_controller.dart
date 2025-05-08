@@ -638,7 +638,7 @@ class AccountController extends GetxController {
     }
   }
 
-  Future<void> _handleHiddenAccountOperation({
+  Future<void> handleHiddenAccountOperation({
     required String operationName,
     String? customErrorMessage,
     required Future<void> Function() authOperation,
