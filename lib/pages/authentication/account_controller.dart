@@ -49,11 +49,7 @@ class UserModel {
     this.verified = false,
     this.email = '',
     this.imageUrl = '',
-    this.walletAddress = '',
-    this.token = 0,
-    this.votes = 0,
     this.about = '',
-    this.nationality = '',
   });
 
   String name;
@@ -62,11 +58,7 @@ class UserModel {
   bool verified;
   String email;
   String imageUrl;
-  String walletAddress;
-  int token;
-  int votes;
   String about;
-  String nationality;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       UserModel(
@@ -78,11 +70,7 @@ class UserModel {
         verified: json['verified'],
         email: json['email'],
         imageUrl: json['imageUrl'],
-        walletAddress: json['walletAddress'],
-        token: json['token'],
-        votes: json['votes'],
         about: json['about'],
-        nationality: json['nationality'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -92,11 +80,7 @@ class UserModel {
     'verified': verified,
     'email': email,
     'imageUrl': imageUrl,
-    'walletAddress': walletAddress,
-    'token': token,
-    'votes': votes,
     'about': about,
-    'nationality': nationality,
   };
 }
 
@@ -164,11 +148,7 @@ class AccountController extends GetxController {
       verified: databaseField['verified'] ?? false,
       email: databaseField['email'] ?? '',
       imageUrl: databaseField['imageUrl'] ?? '',
-      walletAddress: databaseField['walletAddress'] ?? '',
-      token: databaseField['token'] ?? 0,
-      votes: databaseField['votes'] ?? 0,
       about: databaseField['about'] ?? '',
-      nationality: databaseField['nationality'] ?? '',
     );
   }
 
@@ -311,11 +291,7 @@ class AccountController extends GetxController {
               'email': eMail,
               'emailVerified': false,
               'imageUrl': '',
-              'walletAddress': '',
-              'token': 0,
-              'votes': 0,
               'about': '',
-              'nationality': '',
             });
         initializeUserStream();
 
