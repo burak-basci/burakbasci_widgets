@@ -21,3 +21,12 @@ enum GeneralButtonType {
   outlined,
   unEmphasized,
 }
+
+enum AccountType { user, admin, none }
+
+enum AuthPage {
+  login,
+  signUp,
+  forgotPassword,
+  termsAndPolicy,
+}

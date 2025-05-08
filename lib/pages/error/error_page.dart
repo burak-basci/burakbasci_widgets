@@ -1,6 +1,7 @@
-import 'package:burakbasci_widgets/widgets/buttons/gradient_elevated_text_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../widgets/buttons/gradient_elevated_text_button.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({super.key, required this.homeRoute});

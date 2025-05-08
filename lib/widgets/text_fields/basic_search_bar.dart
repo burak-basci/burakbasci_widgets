@@ -1,5 +1,6 @@
-import 'package:burakbasci_widgets/utils/enums.dart';
 import 'package:flutter/material.dart';
+
+import '../../utils/enums.dart';
 import '../buttons/text_field_elevated_button.dart';
 import 'layout_text_field.dart';
 
@@ -61,8 +62,6 @@ class _BasicSearchBarState extends State<BasicSearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    Theme.of(context);
-
     return LayoutTextField(
       formKey: _formKey,
       controller: searchInputController,

@@ -9,6 +9,8 @@ class CustomTab extends StatelessWidget {
     required this.index,
     required this.route,
     required this.tabBarWidth,
+    required this.tabIconSize,
+    required this.tabTextSize,
   });
 
   final double tabBarWidth;
@@ -16,6 +18,8 @@ class CustomTab extends StatelessWidget {
   final IconData icon;
   final int index;
   final String route;
+  final double tabIconSize;
+  final double tabTextSize;
 
   @override
   Widget build(BuildContext context) {
@@ -36,19 +40,31 @@ class CustomTab extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 4.0),
+            SizedBox(height: 8.0),
             Icon(
               icon,
-              color: isSelected
-                  ? Get.theme.primaryColor
-                  : Get.theme.appBarTheme.titleTextStyle?.color,
+              size: tabIconSize,
+              color:
+                  isSelected
+                      ? Get.theme.primaryColor
+                      : Get
+                          .theme
+                          .appBarTheme
+                          .titleTextStyle
+                          ?.color,
             ),
             Text(
               label,
               style: TextStyle(
-                color: isSelected
-                    ? Get.theme.primaryColor
-                    : Get.theme.appBarTheme.titleTextStyle?.color,
+                fontSize: tabTextSize,
+                color:
+                    isSelected
+                        ? Get.theme.primaryColor
+                        : Get
+                            .theme
+                            .appBarTheme
+                            .titleTextStyle
+                            ?.color,
               ),
             ),
             const SizedBox(height: 4),

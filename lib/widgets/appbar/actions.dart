@@ -1,6 +1,7 @@
-import 'package:burakbasci_widgets/widgets/appbar/widgets/appbar_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'widgets/appbar_icon_button.dart';
 
 // Define a class to hold action button data
 class ActionInfo {

@@ -1,19 +1,18 @@
-import 'package:burakbasci_widgets/widgets/appbar/widgets/custom_tab.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/custom_tab.dart';
 
 class TabInfo {
   final int index;
   final String label;
   final IconData icon;
-  final String route;
   final bool showInDebugOnly;
 
   const TabInfo({
     required this.index,
     required this.label,
     required this.icon,
-    required this.route,
     this.showInDebugOnly = false,
   });
 }
@@ -22,16 +21,20 @@ class AppBarTabBar extends StatelessWidget {
   const AppBarTabBar({
     super.key,
     required this.tabs, // Accept a list of TabInfo objects
+    required this.routes,
+    required this.tabIconSize,
+    required this.tabTextSize,
   });
 
   final List<TabInfo> tabs; // Store the list of tabs
+  final List<String> routes; // Store the list of routes
+  final double tabIconSize;
+  final double tabTextSize;
 
   static const double tabBarWidth = 118.0;
 
   @override
   Widget build(BuildContext context) {
-    Theme.of(context);
-
     // Filter tabs based on debug mode if necessary
     final List<TabInfo> visibleTabs =
         tabs.where((tab) {
@@ -50,8 +53,10 @@ class AppBarTabBar extends StatelessWidget {
                   index: tabInfo.index,
                   label: tabInfo.label,
                   icon: tabInfo.icon,
+                  tabIconSize: tabIconSize,
+                  tabTextSize: tabTextSize,
                   tabBarWidth: tabBarWidth,
-                  route: tabInfo.route,
+                  route: routes[tabInfo.index],
                 );
               }).toList(),
         ),

@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 
 class AppBarIconButton extends StatelessWidget {
   const AppBarIconButton({
-    super.key,
     required this.appBarHeight,
     required this.appBarIconWidth,
     required this.icon,
-    this.iconSize = 36.0,
+    required this.iconSize,
     required this.onTap,
     this.isSelected = false,
+    super.key,
   });
 
   final double appBarHeight;
@@ -32,7 +32,11 @@ class AppBarIconButton extends StatelessWidget {
           color:
               isSelected
                   ? Get.theme.primaryColor
-                  : Get.theme.appBarTheme.titleTextStyle?.color,
+                  : Get
+                      .theme
+                      .appBarTheme
+                      .titleTextStyle
+                      ?.color,
         ),
       ),
     );

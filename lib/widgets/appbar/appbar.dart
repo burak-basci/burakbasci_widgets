@@ -1,9 +1,10 @@
-import 'package:burakbasci_widgets/widgets/appbar/actions.dart';
-import 'package:burakbasci_widgets/widgets/appbar/leading_icon.dart';
-import 'package:burakbasci_widgets/widgets/appbar/leading_title.dart';
-import 'package:burakbasci_widgets/widgets/appbar/tab_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'actions.dart';
+import 'leading_icon.dart';
+import 'leading_title.dart';
+import 'tab_bar.dart';
 
 class CustomAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -12,20 +13,25 @@ class CustomAppBar extends StatelessWidget
     required this.tabs,
     required this.homeRoute,
     required this.appBarTitle,
+    required this.iconSize,
     this.actions,
-    this.appBarHeight = 60.0,
     this.appBarIconWidth = 56.0,
+    this.tabIconSize = 26.0,
+    this.tabTextSize = 14.0,
     super.key,
   });
 
+  final List<String> tabBarRoutes;
+  final List<TabInfo> tabs;
   final String homeRoute;
   final String appBarTitle;
-  final List<TabInfo> tabs;
+  final double iconSize;
   final List<ActionInfo>? actions;
-  final List<String> tabBarRoutes;
-
-  final double appBarHeight;
   final double appBarIconWidth;
+  final double tabIconSize;
+  final double tabTextSize;
+
+  static const double appBarHeight = 60.0;
 
   @override
   Size get preferredSize => Size.fromHeight(appBarHeight);
@@ -46,6 +52,7 @@ class CustomAppBar extends StatelessWidget
                   appBarIconWidth: appBarIconWidth,
                   appBarLeadingIcon:
                       Icons.lightbulb_outline_rounded,
+                  iconSize: iconSize,
                   routeToGetTo: homeRoute,
                   routesToShowLeadingIcon: tabBarRoutes,
                 ),
@@ -57,16 +64,18 @@ class CustomAppBar extends StatelessWidget
                   ),
               ],
             ),
-            AppBarTabBar(tabs: tabs),
+            AppBarTabBar(
+              tabs: tabs,
+              routes: tabBarRoutes,
+              tabIconSize: tabIconSize,
+              tabTextSize: tabTextSize,
+            ),
             Positioned(
               right: 0.0,
-              child: SizedBox(
-                height: appBarHeight,
-                child: AppBarActions(
-                  appBarHeight: appBarHeight,
-                  appBarIconWidth: appBarIconWidth,
-                  actions: actions,
-                ),
+              child: AppBarActions(
+                appBarHeight: appBarHeight,
+                appBarIconWidth: appBarIconWidth,
+                actions: actions,
               ),
             ),
           ],

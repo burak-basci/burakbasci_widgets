@@ -1,11 +1,11 @@
-import 'package:burakbasci_widgets/widgets/text_fields/sub_widgets/general_text_feld_validation.dart';
-import 'package:burakbasci_widgets/widgets/text_fields/sub_widgets/general_text_field_style.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '/utils/enums.dart';
+import 'general_text_feld_validation.dart';
+import 'general_text_field_style.dart';
 
 class GeneralTextField extends StatefulWidget {
   const GeneralTextField({
@@ -77,8 +77,6 @@ class _GeneralTextFieldState
 
   @override
   Widget build(BuildContext context) {
-    Theme.of(context);
-
     return TextFormField(
       /// Output the value of the text field to the controller
       onChanged: widget.onChanged,

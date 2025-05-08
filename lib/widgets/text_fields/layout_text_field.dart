@@ -1,6 +1,6 @@
-import 'package:burakbasci_widgets/utils/enums.dart';
 import 'package:flutter/material.dart';
 
+import '../../utils/enums.dart';
 import 'sub_widgets/general_text_field.dart';
 
 class LayoutTextField extends StatefulWidget {
@@ -59,8 +59,6 @@ class LayoutTextField extends StatefulWidget {
 class _LayoutTextFieldState extends State<LayoutTextField> {
   @override
   Widget build(BuildContext context) {
-    Theme.of(context);
-
     return LayoutBuilder(
       builder: (
         BuildContext context,

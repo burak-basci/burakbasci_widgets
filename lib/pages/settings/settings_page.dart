@@ -1,9 +1,10 @@
-import 'package:burakbasci_widgets/widgets/content/content_box.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:settings_ui/settings_ui.dart';
+
+import '../../widgets/content/content_box.dart';
 import 'settings_controller.dart';
 import 'widgets/settings_list.dart';
-import 'package:settings_ui/settings_ui.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -19,7 +20,6 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     Theme.of(context);
-
     return LayoutBuilder(
       builder: (context, constraints) {
         return ContentBox(
@@ -33,7 +33,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Settings',
+                    'Settings'.tr,
                     style: Get.textTheme.displaySmall,
                   ),
                 ),

@@ -21,12 +21,11 @@ class EndOfTextFieldElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Theme.of(context);
-
     return GeneralGradientButton(
       width: width ?? 64.0,
       height: height ?? 48,
-      generalButtonType: generalButtonType ?? GeneralButtonType.emphasized,
+      generalButtonType:
+          generalButtonType ?? GeneralButtonType.emphasized,
       borderRadius: const BorderRadius.only(
         topRight: Radius.circular(16.0),
         bottomRight: Radius.circular(16.0),

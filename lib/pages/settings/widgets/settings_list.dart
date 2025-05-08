@@ -33,10 +33,9 @@ class MySettingsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Theme.of(context);
-
     DevicePlatform platform;
-    if (this.platform == null || this.platform == DevicePlatform.device) {
+    if (this.platform == null ||
+        this.platform == DevicePlatform.device) {
       platform = PlatformUtils.detectPlatform(context);
     } else {
       platform = this.platform!;
@@ -48,7 +47,12 @@ class MySettingsList extends StatelessWidget {
       context: context,
       platform: platform,
       brightness: brightness,
-    ).merge(theme: brightness == Brightness.dark ? darkTheme : lightTheme);
+    ).merge(
+      theme:
+          brightness == Brightness.dark
+              ? darkTheme
+              : lightTheme,
+    );
 
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -60,16 +64,16 @@ class MySettingsList extends StatelessWidget {
           platform: platform,
           child: Padding(
             padding: const EdgeInsets.all(32.0),
-            child: Column(
-              children: [...sections],
-            ),
+            child: Column(children: [...sections]),
           ),
         ),
       ),
     );
   }
 
-  EdgeInsets calculateDefaultPadding(DevicePlatform platform) {
+  EdgeInsets calculateDefaultPadding(
+    DevicePlatform platform,
+  ) {
     switch (platform) {
       case DevicePlatform.android:
       case DevicePlatform.fuchsia:
@@ -91,7 +95,8 @@ class MySettingsList extends StatelessWidget {
 
   Brightness calculateBrightness(BuildContext context) {
     final materialBrightness = Theme.of(context).brightness;
-    final cupertinoBrightness = CupertinoTheme.of(context).brightness ??
+    final cupertinoBrightness =
+        CupertinoTheme.of(context).brightness ??
         MediaQuery.of(context).platformBrightness;
 
     switch (applicationType) {

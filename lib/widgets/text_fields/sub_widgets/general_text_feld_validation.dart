@@ -1,7 +1,8 @@
-import "package:burakbasci_widgets/utils/enums.dart";
-import "package:flutter/foundation.dart";
-import "package:flutter/material.dart";
-import "package:get/get.dart";
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../utils/enums.dart';
 
 String? textFieldValidation({
   String? enteredText,
