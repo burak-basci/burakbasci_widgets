@@ -9,7 +9,6 @@ class RouteNavigation {
   /// Base
   static const String error = '/404';
   static const String home = '/home';
-  static const String login = '/login';
 
   /// Tabs
   static const String debug = '/debug';
@@ -17,6 +16,7 @@ class RouteNavigation {
   static const String tab2 = '/tab2';
 
   /// AppBar Actions
+  static const String login = '/login';
   static const String settings = '/settings';
 
   static GetPage get errorPage {
@@ -31,13 +31,6 @@ class RouteNavigation {
   }
 
   static List<GetPage> routes = <GetPage>[
-    /// login
-    GetPage(
-      name: login,
-      page: () => MyPageScaffolding(child: Text('login')),
-      transition: Transition.noTransition,
-    ),
-
     /// Home
     GetPage(
       name: home,
@@ -45,22 +38,13 @@ class RouteNavigation {
       transition: Transition.noTransition,
     ),
 
-    /// Debug
+    /// TabBar Pages
     if (kDebugMode)
       GetPage(
         name: debug,
         page: () => MyPageScaffolding(child: Text('debug')),
         transition: Transition.noTransition,
       ),
-
-    /// Settings
-    GetPage(
-      name: settings,
-      page: () => MyPageScaffolding(child: SettingsPage()),
-      transition: Transition.noTransition,
-    ),
-
-    /// TabBar Pages
     GetPage(
       name: tab1,
       page: () => MyPageScaffolding(child: Text('Tab 1')),
@@ -69,6 +53,18 @@ class RouteNavigation {
     GetPage(
       name: tab2,
       page: () => MyPageScaffolding(child: Text('Tab 2')),
+      transition: Transition.noTransition,
+    ),
+
+    /// Actions
+    GetPage(
+      name: login,
+      page: () => MyPageScaffolding(child: Text('login')),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: settings,
+      page: () => MyPageScaffolding(child: SettingsPage()),
       transition: Transition.noTransition,
     ),
   ];

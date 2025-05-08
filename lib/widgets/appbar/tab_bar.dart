@@ -4,13 +4,11 @@ import 'package:flutter/material.dart';
 import 'widgets/custom_tab.dart';
 
 class TabInfo {
-  final int index;
   final String label;
   final IconData icon;
   final bool showInDebugOnly;
 
   const TabInfo({
-    required this.index,
     required this.label,
     required this.icon,
     this.showInDebugOnly = false,
@@ -49,14 +47,14 @@ class AppBarTabBar extends StatelessWidget {
           // Generate CustomTab widgets dynamically
           children:
               visibleTabs.map((tabInfo) {
+                final originalIndex = tabs.indexOf(tabInfo);
                 return CustomTab(
-                  index: tabInfo.index,
                   label: tabInfo.label,
                   icon: tabInfo.icon,
                   tabIconSize: tabIconSize,
                   tabTextSize: tabTextSize,
                   tabBarWidth: tabBarWidth,
-                  route: routes[tabInfo.index],
+                  route: routes[originalIndex],
                 );
               }).toList(),
         ),

@@ -1,16 +1,12 @@
-# ✨ Custom Page Scaffold – Flutter Widget Library
+# ✨ Flutter Widget Library - with complete App Scaffolding
 
 A lightweight Flutter widget library focused on reusable **page scaffolding** and layout patterns, designed for fast development across multiple projects. This package provides a unified structure for app pages, allowing for consistent UI and code reuse.
-
----
 
 ## 📦 Features
 
 - 🚀 **Reusable Page Scaffold** widget with customizable title, tabs and actions
 - 🌓 Built-in support for theming (light/dark modes)
 - 🧪 Simple and testable widget composition
-
----
 
 ## 🛠️ Getting Started
 
@@ -36,8 +32,6 @@ To start using the package:
    ```dart
    import 'package:burakbasci_widgets/burakbasci_widgets.dart';
    ```
-
----
 
 ## 🚀 Usage
 
@@ -69,7 +63,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Widget Demo',
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: kDebugMode,
 
       /// Theme Settings
       theme: Themes().lightTheme,
@@ -222,8 +216,6 @@ class RouteNavigation {
 ```
 
 ➡️ For advanced usage and composition examples, check the `/example` directory.
-
----
 
 ## 📚 Additional Information
 

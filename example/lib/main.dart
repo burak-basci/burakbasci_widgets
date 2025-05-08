@@ -5,6 +5,7 @@ import 'package:burakbasci_widgets/utils/themes.dart';
 import 'package:burakbasci_widgets/widgets/appbar/actions.dart';
 import 'package:burakbasci_widgets/widgets/appbar/tab_bar.dart';
 import 'package:example/utils/navigation.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Widget Demo',
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: kDebugMode,
 
       /// Theme Settings
       theme: Themes().lightTheme,
@@ -54,28 +55,17 @@ class MyPageScaffolding extends StatelessWidget {
       appBarIconWidth: 56,
       tabBarRoutes: <String>[
         RouteNavigation.debug,
-        RouteNavigation.home,
         RouteNavigation.tab1,
         RouteNavigation.tab2,
       ],
       tabs: <TabInfo>[
         TabInfo(
-          index: 0,
           label: 'Debug',
           icon: Icons.bug_report,
           showInDebugOnly: true,
         ),
-        TabInfo(index: 1, label: 'Home', icon: Icons.home),
-        TabInfo(
-          index: 2,
-          label: 'Tab 1',
-          icon: Icons.one_k,
-        ),
-        TabInfo(
-          index: 3,
-          label: 'Tab 2',
-          icon: Icons.two_k,
-        ),
+        TabInfo(label: 'Tab 1', icon: Icons.one_k),
+        TabInfo(label: 'Tab 2', icon: Icons.two_k),
       ],
       actions: <ActionInfo>[
         ActionInfo(

@@ -6,7 +6,6 @@ class CustomTab extends StatelessWidget {
     super.key,
     required this.label,
     required this.icon,
-    required this.index,
     required this.route,
     required this.tabBarWidth,
     required this.tabIconSize,
@@ -16,7 +15,6 @@ class CustomTab extends StatelessWidget {
   final double tabBarWidth;
   final String label;
   final IconData icon;
-  final int index;
   final String route;
   final double tabIconSize;
   final double tabTextSize;
