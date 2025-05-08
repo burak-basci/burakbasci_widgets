@@ -14,11 +14,17 @@ To start using the package:
 
 1. Add it to your `pubspec.yaml`:
 
+   with this command:
+
+   ``` bash
+   flutter pub add burakbasci_widgets
+   ```
+
+   or manually:
+
    ```yaml
    dependencies:
-     burakbasci_widgets:
-       git:
-         url: https://github.com/burak-basci/burakbasci_widgets.git
+     burakbasci_widgets: ^0.0.3
    ```
 
 2. Run:
