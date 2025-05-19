@@ -15,7 +15,7 @@ class GeneralIconButton extends StatelessWidget {
   final double? width;
   final IconData icon;
   final double iconSize;
-  final VoidCallback onTap;
+  final void Function()? onTap;
   final void Function(bool)? onHover;
 
   @override
